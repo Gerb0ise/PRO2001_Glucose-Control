@@ -82,8 +82,8 @@ parfor i = 1:total_k^3
 
 end
 
-% fpath = 'C:\Users\Gerbie\Google Drive\Current courses\PRO2001 - Glucose level\edes_matlab\data';
-% save(fullfile(fpath,"data_n" + total_k + "_m"+ multiplier));
+fpath = 'C:\Users\Gerbie\Google Drive\Current courses\PRO2001 - Glucose level\edes_matlab\data';
+save(fullfile(fpath,"data_n" + total_k + "_m"+ multiplier));
 
 
 %% Calculating peaks for a set of k6 and k8 parameters
@@ -109,8 +109,8 @@ parfor i = 1:total_k^2
 
 end
 
-% fpath = 'C:\Users\Gerbie\Google Drive\Current courses\PRO2001 - Glucose level\edes_matlab\data';
-% save(fullfile(fpath,"data_n" + total_k + "_m" + multiplier + "_no_k8"));
+fpath = 'C:\Users\Gerbie\Google Drive\Current courses\PRO2001 - Glucose level\edes_matlab\data';
+save(fullfile(fpath,"data_n" + total_k + "_m" + multiplier + "_no_k8"));
 
 
 %% Plotting 3D mesh figure of peaks
@@ -216,7 +216,6 @@ k = [k6' k7' k8'];
 
 for j = 1:3  
     
-    %fig1 = figure('WindowState','maximized','renderer','painters');
     fig1 = figure('units','centimeters','position',[0 0 22 18],'renderer','painters');
     
     if j==1, name = 'k6';
@@ -275,8 +274,6 @@ for j = 1:3
         cb.TickLabels = [min(k(:,j)) max(k(:,j))];
         
     fpath = 'C:\Users\Gerbie\Google Drive\Current courses\PRO2001 - Glucose level\edes_matlab\Figures';
-    %saveas(fig1,fullfile(fpath,"Simu_varying_"+ name),'svg')
-    %saveas(fig1,fullfile(fpath,"Simu_varying_"+ name),'png')
     print(fig1,fullfile(fpath,"Simu_varying_"+ name),'-r600','-dpng')
     print(fig1,fullfile(fpath,"Simu_varying_"+ name),'-r600','-dsvg')
     
